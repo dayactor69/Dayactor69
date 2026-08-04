@@ -75,6 +75,8 @@
       "valori": "Git · pull request · test automatici · CI su GitHub Actions"
     }
   ],
+  "_nota_linguaggi": "Riga sotto il grafico dei linguaggi. Serve a spiegare uno scarto reale, non a scusarsi.",
+  "nota_linguaggi": "conta solo i repository pubblici: il progetto principale è privato, quindi qui non compare",
   "_nota_contatti": "Compaiono in fondo alla pagina. Lascia vuoto ciò che non vuoi mostrare.",
   "contatti": {
     "email": "igor.riefoli@gmail.com",

@@ -288,9 +288,9 @@ def stats(dati: dict, tema: dict) -> str:
     return ''.join(out)
 
 
-def langs(dati: dict, tema: dict) -> str:
+def langs(dati: dict, tema: dict, nota: str = '') -> str:
     voci = linguaggi(dati)
-    alt = 26 + len(voci) * 30
+    alt = 26 + len(voci) * 30 + (20 if nota else 0)
     out = [sk.apri(LARG, alt, (400, 600), 'Linguaggi più usati nei repository pubblici')]
     px, col_barra = 4, 250
     for i, l in enumerate(voci):
@@ -310,6 +310,12 @@ def langs(dati: dict, tema: dict) -> str:
                    f'fill="{l["colore"]}"><animate attributeName="width" '
                    f'to="{piena * l["quota"]:.1f}" begin="{inizio + 0.06:.2f}s" '
                    f'dur="0.6s" fill="freeze"/></rect>')
+
+    # Uno scarto va spiegato dove si vede, non in fondo alla pagina: senza
+    # questa riga il grafico contraddice l'hero e lo stack.
+    if nota:
+        out.append(comparso(testo(px, 24 + len(voci) * 30 + 6, nota, 11.5,
+                                  tema['faint']), 0.2 + len(voci) * 0.1))
     out.append(sk.chiudi())
     return ''.join(out)
 
@@ -573,7 +579,7 @@ def main() -> int:
         grafiche = {
             'hero': hero(p, dati, tema),
             'stats': stats(dati, tema),
-            'langs': langs(dati, tema),
+            'langs': langs(dati, tema, p.get('nota_linguaggi', '')),
             'year': anno(dati, tema),
             'path': percorso(p, tema),
             'stack': stack(p, tema),
