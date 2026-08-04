@@ -1,0 +1,45 @@
+name: rigenera le grafiche del profilo
+
+on:
+  schedule:
+    # 05:17 UTC. Un minuto dispari perché le esecuzioni all'ora tonda vengono
+    # accodate insieme a quelle di tutti gli altri e partono in ritardo.
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+# Nessun trigger su `push`: questo job scrive un commit, e su push
+# ripartirebbe sul proprio commit all'infinito.
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profilo
+  cancel-in-progress: false
+
+jobs:
+  rigenera:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Nessun `pip install`: il generatore usa solo la libreria standard,
+      # quindi non c'è una dipendenza che possa rompersi in CI.
+      - name: genera gli SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python3 scripts/generate.py --out img
+
+      - name: committa solo se è cambiato qualcosa
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- img)" ]; then
+            echo "Nessuna variazione: niente commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- img
+          git commit -m "profilo: aggiorna le grafiche"
+          git push

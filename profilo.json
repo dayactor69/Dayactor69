@@ -1,0 +1,84 @@
+{
+  "_istruzioni": "Contenuti statici della pagina GitHub. I numeri (contributi, streak, linguaggi) NON stanno qui: li prende il workflow dall'API. Modifica questo file, poi `python3 profile/scripts/generate.py --sample` per rivedere l'anteprima.",
+  "utente": "dayactor69",
+  "nome": "Igor Riefoli",
+  "dal": 2020,
+  "_nota_lede": "Riga in evidenza sotto l'hero, nel carattere di GitHub. Non ripetere il MOTD.",
+  "lede": "Ho imparato a tenere in piedi sistemi prima di imparare a scriverli: server di gioco, macchine Linux, e le persone che ci giravano intorno. Adesso costruisco software con la stessa ossessione per le cose che non devono cadere.",
+  "_nota_motd": "Le righe dell'hero. Massimo 3, massimo ~62 caratteri l'una: oltre, escono dal pannello.",
+  "motd": [
+    "sviluppatore full-stack, da autodidatta.",
+    "prima di scrivere software gestivo i server su cui girava:",
+    "VPS, dedicati Ubuntu, e le community che ci stavano sopra."
+  ],
+  "_nota_percorso": "La sezione «percorso». Ogni voce: periodo, titolo, ruolo, righe. `stato` accende il pallino: attivo | concluso.",
+  "percorso": [
+    {
+      "periodo": "2025 — oggi",
+      "titolo": "Shawe",
+      "ruolo": "progettazione e sviluppo, da solo",
+      "stato": "attivo",
+      "righe": [
+        "Gestionale di prenotazioni multi-cliente per saloni e centri estetici.",
+        "Database, server, interfaccia, sicurezza e messa in produzione.",
+        "Isolamento fra clienti imposto dal database, non dal codice."
+      ]
+    },
+    {
+      "periodo": "2021 — 2023",
+      "titolo": "Epitome — EPTM",
+      "ruolo": "responsabile divisione europea · Krunker.io",
+      "stato": "concluso",
+      "righe": [
+        "Clan competitivo e Speedrun/SE: gestivo tutta la parte europea.",
+        "Calendario dei giocatori, composizione e rotazione dei team.",
+        "Amministrazione del server Discord: ruoli, canali, moderazione."
+      ]
+    },
+    {
+      "periodo": "2018 — 2022",
+      "titolo": "Server Minecraft",
+      "ruolo": "da controllore anticheat a fondatore",
+      "stato": "concluso",
+      "righe": [
+        "Partito dallo staff come controllore hack, arrivato a fondare due server.",
+        "Progettazione, realizzazione e gestione: configurazione, plugin, permessi.",
+        "Amministrazione di VPS e macchine dedicate su Ubuntu Server.",
+        "Gestione di staff e community: reclutamento, turni, dispute."
+      ]
+    }
+  ],
+  "_nota_competenze": "Righe della sezione «stack». Chiave a sinistra, valori a destra.",
+  "competenze": [
+    {
+      "voce": "linguaggi",
+      "valori": "TypeScript · JavaScript · SQL · Python · Bash"
+    },
+    {
+      "voce": "web",
+      "valori": "React · Next.js · Node.js · Tailwind CSS"
+    },
+    {
+      "voce": "dati",
+      "valori": "PostgreSQL · Supabase · Row Level Security · migration versionate"
+    },
+    {
+      "voce": "sistemi",
+      "valori": "Ubuntu Server · VPS e dedicati · SSH · reverse proxy · backup"
+    },
+    {
+      "voce": "integrazioni",
+      "valori": "Stripe · WhatsApp Business API · webhook · notifiche push"
+    },
+    {
+      "voce": "metodo",
+      "valori": "Git · pull request · test automatici · CI su GitHub Actions"
+    }
+  ],
+  "_nota_contatti": "Compaiono in fondo alla pagina. Lascia vuoto ciò che non vuoi mostrare.",
+  "contatti": {
+    "email": "igor.riefoli@gmail.com",
+    "portfolio": "",
+    "linkedin": ""
+  }
+}
