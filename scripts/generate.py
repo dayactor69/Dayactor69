@@ -530,7 +530,15 @@ def readme(p: dict, cartella: str) -> str:
         contatti.append(f"[portfolio]({c['portfolio']})")
     if c.get('linkedin'):
         contatti.append(f"[LinkedIn]({c['linkedin']})")
-    sezione('contatti', ['&nbsp;&nbsp;·&nbsp;&nbsp;'.join(contatti)] if contatti else [])
+
+    # Tutto il resto della pagina è immagini. Questa riga è l'unica spina
+    # testuale: chi ha le immagini bloccate, un lettore di schermo o un
+    # client che non carica gli SVG deve comunque leggere chi sono.
+    corpo = [f"**{p['nome']}** — {p['motd'][0].rstrip('.')}"]
+    if contatti:
+        corpo.append('')
+        corpo.append('&nbsp;&nbsp;·&nbsp;&nbsp;'.join(contatti))
+    sezione('contatti', corpo)
 
     righe += [
         '<sub>Le grafiche di questa pagina sono disegnate dal repository stesso: '

@@ -55,6 +55,8 @@
   <img alt="contatti" src="img/h-contatti-light.svg" width="860">
 </picture>
 
+**Igor Riefoli** — sviluppatore full-stack, da autodidatta
+
 [igor.riefoli@gmail.com](mailto:igor.riefoli@gmail.com)
 
 <sub>Le grafiche di questa pagina sono disegnate dal repository stesso: nessuna richiesta a servizi esterni, nessun widget che possa smettere di rispondere. Si rigenerano ogni notte con GitHub Actions — <a href="scripts/generate.py">scripts/generate.py</a>.</sub>
